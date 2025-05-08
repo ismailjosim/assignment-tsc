@@ -69,3 +69,31 @@
 // 		product.price > max.price ? product : max,
 // 	)
 // }
+
+// Problem 07
+enum Day {
+	Monday,
+	Tuesday,
+	Wednesday,
+	Thursday,
+	Friday,
+	Saturday,
+	Sunday,
+}
+
+function getDayType(day: Day): string {
+	return day === Day.Sunday ? 'Weekend' : 'Weekday'
+}
+
+// Problem 08
+async function squareAsync(n: number): Promise<number> {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			if (n < 0) {
+				reject(new Error('Negative number not allowed'))
+			} else {
+				resolve(n * n)
+			}
+		}, 1000)
+	})
+}
