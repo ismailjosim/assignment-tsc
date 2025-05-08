@@ -6,50 +6,18 @@
 // 		return input.toLowerCase()
 // 	}
 // }
-// Problem 02
-// function filterByRating(
-// 	items: { title: string; rating: number }[],
-// ): { title: string; rating: number }[] {
-// 	const matching = items.filter(
-// 		(item: { title: string; rating: number }) => item.rating >= 4,
-// 	)
-// 	return matching
-// }
-// Problem 03
-// function concatenateArrays<T>(...arrays: T[][]): T[] {
-// 	// return arrays.flat()
-// 	return arrays.reduce((acc, cur) => acc.concat(cur), [])
-// }
-// problem 04
-// class Vehicle {
-// 	private make: string
-// 	private year: number
-// 	constructor(make: string, year: number) {
-// 		this.make = make
-// 		this.year = year
-// 	}
-// 	getInfo(): string {
-// 		return `Make: ${this.make}, Year: ${this.year}`
-// 	}
-// }
-// class Car extends Vehicle {
-// 	private model: string
-// 	constructor(make: string, year: number, model: string) {
-// 		super(make, year)
-// 		this.model = model
-// 	}
-// 	getModel(): string {
-// 		return `Model: ${this.model}`
-// 	}
-// }
-// Problem 05
-function processValue(value) {
-    if (typeof value === 'string') {
-        return value.length;
-    }
-    else {
-        return value * 2;
-    }
+function getMostExpensiveProduct(products) {
+    if (products.length === 0)
+        return null;
+    return products.reduce(function (max, product) {
+        return product.price > max.price ? product : max;
+    });
 }
-console.log(processValue('Hello'));
-console.log(processValue(10));
+// Example Usage:
+var products = [
+    { name: 'Laptop', price: 1200 },
+    { name: 'Phone', price: 800 },
+    { name: 'Tablet', price: 500 },
+];
+console.log(getMostExpensiveProduct(products)); // Output: { name: "Laptop", price: 1200 }
+console.log(getMostExpensiveProduct([]));
