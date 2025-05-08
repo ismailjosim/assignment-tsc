@@ -1,4 +1,3 @@
-// Problem 01
 function formatString(input: string, toUpper?: boolean): string {
 	if (toUpper || toUpper === undefined) {
 		return input.toUpperCase()
@@ -7,7 +6,6 @@ function formatString(input: string, toUpper?: boolean): string {
 	}
 }
 
-// Problem 02
 function filterByRating(
 	items: { title: string; rating: number }[],
 ): { title: string; rating: number }[] {
@@ -17,13 +15,11 @@ function filterByRating(
 	return matching
 }
 
-// Problem 03
 function concatenateArrays<T>(...arrays: T[][]): T[] {
 	// return arrays.flat()
 	return arrays.reduce((acc, cur) => acc.concat(cur), [])
 }
 
-// problem 04
 class Vehicle {
 	private make: string
 	private year: number
@@ -47,7 +43,6 @@ class Car extends Vehicle {
 	}
 }
 
-// Problem 05
 function processValue(value: string | number): number {
 	if (typeof value === 'string') {
 		return value.length
@@ -56,7 +51,6 @@ function processValue(value: string | number): number {
 	}
 }
 
-// Problem 06
 interface Product {
 	name: string
 	price: number
@@ -70,7 +64,6 @@ function getMostExpensiveProduct(products: Product[]): Product | null {
 	)
 }
 
-// Problem 07
 enum Day {
 	Monday,
 	Tuesday,
@@ -85,7 +78,6 @@ function getDayType(day: Day): string {
 	return day === Day.Sunday ? 'Weekend' : 'Weekday'
 }
 
-// Problem 08
 async function squareAsync(n: number): Promise<number> {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
